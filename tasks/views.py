@@ -11,6 +11,7 @@ from .serializers import (
 
 class TaskViewSet(ModelViewSet):
     permission_classes = [IsAuthenticated]
+    http_method_names = ("get", "put", "post", "delete")
 
     def get_queryset(self):
         return Task.objects.select_related("profile").filter(
@@ -28,6 +29,7 @@ class TaskViewSet(ModelViewSet):
 
 class ProfileViewSet(ModelViewSet):
     permission_classes = [IsAuthenticated]
+    http_method_names = ("get", "put", "delete")
 
     def get_queryset(self):
         return Profile.objects.select_related("user").filter(
@@ -35,7 +37,7 @@ class ProfileViewSet(ModelViewSet):
         )
 
     def get_serializer_class(self):
-        if self.request.method == "POST":
+        if self.request.method == "PUT":
             return ProfileCreateSerializer
         return ProfileSerializer
 

@@ -33,7 +33,7 @@ class TaskCreateSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         user_pk = self.context["user_pk"]
-        profile, created = Profile.objects.get_or_create(user_id=user_pk)
+        profile = Profile.objects.get(user_id=user_pk)
         instance = Task.objects.create(profile=profile, **validated_data)
         return instance
 
@@ -66,5 +66,6 @@ class ProfileCreateSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         user = self.context["user"]
-        instance = Profile.objects.create(user=user, **validated_data)
+        Profile.objects.filter(user=user).update(**validated_data)
+        instance = Profile.objects.select_related("user").filter(user=user)
         return instance
