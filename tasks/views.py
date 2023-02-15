@@ -1,4 +1,5 @@
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from .models import Task, Profile
 from .serializers import (
     TaskSerializer,
@@ -9,7 +10,12 @@ from .serializers import (
 
 
 class TaskViewSet(ModelViewSet):
-    queryset = Task.objects.all()
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Task.objects.select_related("profile").filter(
+            profile_id=self.kwargs["profile_pk"]
+        )
 
     def get_serializer_class(self):
         if self.request.method == "POST":
@@ -21,7 +27,12 @@ class TaskViewSet(ModelViewSet):
 
 
 class ProfileViewSet(ModelViewSet):
-    queryset = Profile.objects.select_related("user").all()
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Profile.objects.select_related("user").filter(
+            user_id=self.request.user.id
+        )
 
     def get_serializer_class(self):
         if self.request.method == "POST":
