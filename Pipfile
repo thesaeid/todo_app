@@ -11,6 +11,7 @@ black = "*"
 psycopg2-binary = "*"
 djoser = "*"
 drf-nested-routers = "*"
+gunicorn = "*"
 
 [dev-packages]
 

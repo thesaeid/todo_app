@@ -14,19 +14,11 @@ from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-f%v2!429e1i*5k*3c!yb7qhsra2d^ahuu9e-7^ad+w)=g4#_76"
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
 
 INTERNAL_IPS = [
     # ...
@@ -80,21 +72,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "todo.wsgi.application"
-
-
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "todo",
-        "USER": "thesaeid",
-        "PASSWORD": "S@eed1035",
-        "HOST": "localhost",
-        "PORT": "5432",
-    }
-}
 
 AUTH_USER_MODEL = "core.User"
 
