@@ -21,9 +21,8 @@ and activate virtual environment.
 ```bash
 pipenv shell
 ```
-## pipenv alternatives
 
-requiremnts.txt is provided so you can use it as you want.
+> also requiremnts.txt is provided so you can use it as you prefer.
 
 ## Contributing
 
