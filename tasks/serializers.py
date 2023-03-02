@@ -5,13 +5,19 @@ from .models import Task, Profile
 class TaskSerializer(serializers.ModelSerializer):
     created = serializers.DateTimeField(read_only=True, format="%Y-%m-%d %H:%M:%S")
     updated = serializers.DateTimeField(read_only=True, format="%Y-%m-%d %H:%M:%S")
+    start_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M")
+    end_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M")
 
     class Meta:
         model = Task
         fields = (
             "id",
             "title",
+            "description",
             "status",
+            "location",
+            "start_time",
+            "end_time",
             "created",
             "updated",
         )
@@ -26,7 +32,11 @@ class TaskCreateSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "title",
+            "description",
             "status",
+            "location",
+            "start_time",
+            "end_time",
             "created",
             "updated",
         )

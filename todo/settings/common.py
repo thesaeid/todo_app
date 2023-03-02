@@ -26,6 +26,8 @@ INTERNAL_IPS = [
     # ...
 ]
 
+USE_TZ = True
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -35,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.gis",
     "rest_framework",
     "djoser",
     "debug_toolbar",

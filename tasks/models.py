@@ -1,6 +1,6 @@
 from uuid import uuid4
-from django.db import models
 from django.conf import settings
+from django.contrib.gis.db import models
 from django.template.defaultfilters import truncatechars
 
 
@@ -22,6 +22,12 @@ class Task(models.Model):
     )
 
     title = models.CharField(max_length=255)
+    description = models.TextField(blank=True, null=True)
+    location = models.PointField(geography=True, null=True, blank=True)
+
+    start_time = models.DateTimeField(blank=True, null=True)
+    end_time = models.DateTimeField(blank=True, null=True)
+
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name="tasks")
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="todo")
     created = models.DateTimeField(auto_now_add=True)
