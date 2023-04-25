@@ -15,11 +15,12 @@ class TaskSerializer(serializers.ModelSerializer):
             "title",
             "description",
             "status",
-            "location",
-            "start_time",
+            # "location",
+            "sta
             "end_time",
             "created",
             "updated",
+            "notify",
         )
 
 
@@ -34,7 +35,8 @@ class TaskCreateSerializer(serializers.ModelSerializer):
             "title",
             "description",
             "status",
-            "location",
+            "notify",
+            # "location",
             "start_time",
             "end_time",
             "created",

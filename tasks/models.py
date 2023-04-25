@@ -23,10 +23,12 @@ class Task(models.Model):
 
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
-    location = models.PointField(geography=True, null=True, blank=True)
+    # location = models.PointField(geography=True, null=True, blank=True)
 
     start_time = models.DateTimeField(blank=True, null=True)
     end_time = models.DateTimeField(blank=True, null=True)
+
+    notify = models.BooleanField(default=False)
 
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name="tasks")
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="todo")
