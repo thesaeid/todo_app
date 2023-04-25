@@ -12,6 +12,9 @@ psycopg2-binary = "*"
 djoser = "*"
 drf-nested-routers = "*"
 gunicorn = "*"
+redis = "*"
+celery = "*"
+flower = "*"
 
 [dev-packages]
 
