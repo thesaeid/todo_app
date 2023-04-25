@@ -1,6 +1,6 @@
 # Todo App api
 
-this is a todo-app api implemented using Django Rest Framework(DRF), Postgresql, Djoser(Authentication, JWT), Docker(soon), Celery(soon), redis(soon).
+this is a todo-app api implemented using Django Rest Framework(DRF), Postgresql, Djoser(Authentication, JWT), Docker(soon), Celery, redis.
 
 ## Installation
 
