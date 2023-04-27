@@ -16,7 +16,7 @@ class TaskSerializer(serializers.ModelSerializer):
             "description",
             "status",
             # "location",
-            "sta
+            "start_time",
             "end_time",
             "created",
             "updated",
