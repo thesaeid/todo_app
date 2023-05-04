@@ -41,13 +41,11 @@ INSTALLED_APPS = [
     "django.contrib.gis",
     "rest_framework",
     "djoser",
-    "debug_toolbar",
     "tasks.apps.TasksConfig",
     "core.apps.CoreConfig",
 ]
 
 MIDDLEWARE = [
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
