@@ -14,7 +14,7 @@ click-plugins==1.1.1
 click-repl==0.2.0
 coreapi==2.3.3
 coreschema==0.0.4
-cryptography==40.0.1
+cryptography==38.0.0
 defusedxml==0.7.1
 Django==4.1.7
 django-templated-mail==1.1.1
@@ -22,7 +22,6 @@ djangorestframework==3.14.0
 djangorestframework-simplejwt==4.8.0
 djoser==2.1.0
 drf-nested-routers==0.93.4
-fandogh-cli==1.26.10
 flower==1.2.0
 gunicorn==20.1.0
 humanize==4.6.0
