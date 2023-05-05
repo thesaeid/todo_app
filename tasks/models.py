@@ -1,6 +1,6 @@
 from uuid import uuid4
 from django.conf import settings
-from django.contrib.gis.db import models
+from django.db import models
 from django.template.defaultfilters import truncatechars
 
 
