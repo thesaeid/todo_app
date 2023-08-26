@@ -1,11 +1,11 @@
 import os
-from .common import *
+from .base import *
 
 DEBUG = False
 
 SECRET_KEY = os.environ["SECRET_KEY"]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 DATABASES = {
     "default": {

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "djoser",
+    "drf_spectacular",
     "tasks.apps.TasksConfig",
     "core.apps.CoreConfig",
 ]
@@ -77,9 +78,16 @@ WSGI_APPLICATION = "todo.wsgi.application"
 AUTH_USER_MODEL = "core.User"
 
 REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "ToDo App",
+    "DESCRIPTION": "DRF ToDo API",
+    "VERSION": "1.0.0",
 }
 
 DJOSER = {
